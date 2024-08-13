@@ -1,0 +1,772 @@
+<COMPUTREE_SCRIPT>
+	<Step plugin="plug_lvoxv2" type="LVOX3_StepLoadFiles" debug="off" id="33">
+		<S1>
+			<Settings>
+				<CT_VirtualAbstractStep>
+					<InputResultConfigDialog>
+						<Values>
+							<Turn>
+								<Values>
+									<ResultModel>
+										<CT_InAbstractModel_Values>
+											<Version value="1"></Version>
+											<ModelName value="CT_InResultModelNotNeedInputResult" id="0" description=""></ModelName>
+											<ModelType value="CT_InResultModelNotNeedInputResult" id="1" description=""></ModelType>
+											<ChoiceMode value="0" id="2" description=""></ChoiceMode>
+											<FinderMode value="0" id="3" description=""></FinderMode>
+										</CT_InAbstractModel_Values>
+										<CT_InResultModelNotNeedInputResult_Values>
+											<Version value="1"></Version>
+											<Type value="CT_InResultModelNotNeedInputResult" id="4" description=""></Type>
+										</CT_InResultModelNotNeedInputResult_Values>
+									</ResultModel>
+									<Version value="1"></Version>
+								</Values>
+							</Turn>
+							<Version value="1"></Version>
+						</Values>
+					</InputResultConfigDialog>
+				</CT_VirtualAbstractStep>
+				<LVOX3_StepLoadFiles>
+					<Reader>
+						<CT_AbstractReader_Settings>
+							<CT_Reader_XYB_Settings>
+								<filterRadius value="0" id="5" description=""></filterRadius>
+							</CT_Reader_XYB_Settings>
+							<Filepath value="&#47;home&#47;nguyen&#47;work&#47;experimentation&#47;lvox&#47;TerreNeuve&#47;paperLvox&#47;bF17_PCT&#47;data&#47;bf17_PCT_filters_ON_ALS_Aligned.xyb" id="6" description=""></Filepath>
+						</CT_AbstractReader_Settings>
+						<name value="CT_Reader_XYB" id="7" description=""></name>
+					</Reader>
+					<File>
+						<version value="1" id="8" description=""></version>
+						<filepath value="&#47;home&#47;nguyen&#47;work&#47;experimentation&#47;lvox&#47;TerreNeuve&#47;paperLvox&#47;bF17_PCT&#47;data&#47;bf17_PCT_filters_ON_ALS_Aligned.xyb" id="9" description=""></filepath>
+						<scannerType value="SphericPointCloud" id="10" description=""></scannerType>
+						<clockWise value="false" id="11" description=""></clockWise>
+						<radians value="false" id="12" description=""></radians>
+						<scannerPositionX value="0" id="13" description=""></scannerPositionX>
+						<scannerPositionY value="0" id="14" description=""></scannerPositionY>
+						<scannerPositionZ value="0" id="15" description=""></scannerPositionZ>
+						<scannerResolutionX value="0.036" id="16" description=""></scannerResolutionX>
+						<scannerResolutionY value="0.036" id="17" description=""></scannerResolutionY>
+						<scannerThetaStart value="0" id="18" description=""></scannerThetaStart>
+						<scannerThetaEnd value="360" id="19" description=""></scannerThetaEnd>
+						<scannerPhiStart value="0" id="20" description=""></scannerPhiStart>
+						<scannerPhiEnd value="180" id="21" description=""></scannerPhiEnd>
+						<scannerDirectionX value="0" id="22" description=""></scannerDirectionX>
+						<scannerDirectionY value="0" id="23" description=""></scannerDirectionY>
+						<scannerDirectionZ value="-1" id="24" description=""></scannerDirectionZ>
+					</File>
+					<useScannerConfiguration value="false" id="25" description=""></useScannerConfiguration>
+					<filterPointsOrigin value="true" id="26" description=""></filterPointsOrigin>
+					<restrictScene value="false" id="27" description=""></restrictScene>
+					<restrictRadius value="0" id="28" description=""></restrictRadius>
+				</LVOX3_StepLoadFiles>
+			</Settings>
+		</S1>
+		<S2>
+			<SerializedInformation>
+				<Version value="1"></Version>
+				<RelativeFileName value="" id="29" description=""></RelativeFileName>
+				<NSerialized value="0" id="30" description=""></NSerialized>
+			</SerializedInformation>
+		</S2>
+		<Step plugin="plug_onf" type="ONF_StepClassifyGround" debug="off" id="34">
+			<S1>
+				<Settings>
+					<CT_VirtualAbstractStep>
+						<PostConfigDialog>
+							<Version>
+								<V value="1" id="31" description=""></V>
+							</Version>
+							<Widget>
+								<CT_DoubleSpinBox>
+									<Values>
+										<Version value="1"></Version>
+										<DoubleValue value="0.05" id="32" description="R&#233;solution de la grille :"></DoubleValue>
+									</Values>
+								</CT_DoubleSpinBox>
+								<CT_DoubleSpinBox>
+									<Values>
+										<Version value="1"></Version>
+										<DoubleValue value="0.5" id="33" description="Epaisseur du sol :"></DoubleValue>
+									</Values>
+								</CT_DoubleSpinBox>
+								<CT_CheckBox>
+									<Values>
+										<Version value="1"></Version>
+										<Checked value="true" id="34" description="Filtrage selon la densit&#233;"></Checked>
+										<Text value="" id="35" description=""></Text>
+									</Values>
+								</CT_CheckBox>
+								<CT_DoubleSpinBox>
+									<Values>
+										<Version value="1"></Version>
+										<DoubleValue value="200" id="36" description="Densit&#233; minimum :"></DoubleValue>
+									</Values>
+								</CT_DoubleSpinBox>
+								<CT_CheckBox>
+									<Values>
+										<Version value="1"></Version>
+										<Checked value="true" id="37" description="Filtrage selon le voisinnage"></Checked>
+										<Text value="" id="38" description=""></Text>
+									</Values>
+								</CT_CheckBox>
+								<CT_DoubleSpinBox>
+									<Values>
+										<Version value="1"></Version>
+										<DoubleValue value="3" id="39" description="Voisinage &#40;points isol&#233;s&#41; :"></DoubleValue>
+									</Values>
+								</CT_DoubleSpinBox>
+							</Widget>
+						</PostConfigDialog>
+						<InputResultConfigDialog>
+							<Values>
+								<Turn>
+									<Values>
+										<ResultModel>
+											<CT_InAbstractModel_Values>
+												<Possibility>
+													<IsSelected value="true" id="40" description=""></IsSelected>
+													<OutModelName value="LVOX3_SLF_result" id="41" description=""></OutModelName>
+													<OutModelType value="CT_OutResultModelGroup" id="42" description=""></OutModelType>
+												</Possibility>
+												<Children_0>
+													<CT_InAbstractModel_Values>
+														<Children_0>
+															<CT_InAbstractModel_Values>
+																<Possibility>
+																	<IsSelected value="true" id="43" description=""></IsSelected>
+																	<OutModelName value="LVOX3_SLF_group" id="44" description=""></OutModelName>
+																	<OutModelType value="CT_OutStdGroupModel" id="45" description=""></OutModelType>
+																</Possibility>
+																<Children_0>
+																	<CT_InAbstractModel_Values>
+																		<Possibility>
+																			<IsSelected value="true" id="46" description=""></IsSelected>
+																			<OutModelName value="sce" id="47" description=""></OutModelName>
+																			<OutModelType value="CT_OutStdSingularItemModel" id="48" description=""></OutModelType>
+																		</Possibility>
+																		<CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable&#47;CT_AbstractItemDrawableWithPointCloud&#47;CT_Scene" id="49" description=""></ItemType>
+																		</CT_InAbstractItemModel>
+																		<Version value="1"></Version>
+																		<ModelName value="isc" id="50" description=""></ModelName>
+																		<ModelType value="CT_InStdSingularItemModel" id="51" description=""></ModelType>
+																		<ChoiceMode value="1" id="52" description=""></ChoiceMode>
+																		<FinderMode value="0" id="53" description=""></FinderMode>
+																	</CT_InAbstractModel_Values>
+																</Children_0>
+																<CT_InAbstractItemModel>
+																	<Version value="1"></Version>
+																	<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="54" description=""></ItemType>
+																</CT_InAbstractItemModel>
+																<Version value="1"></Version>
+																<ModelName value="igrp" id="55" description=""></ModelName>
+																<ModelType value="CT_InStdGroupModel" id="56" description=""></ModelType>
+																<ChoiceMode value="2" id="57" description=""></ChoiceMode>
+																<FinderMode value="0" id="58" description=""></FinderMode>
+															</CT_InAbstractModel_Values>
+														</Children_0>
+														<CT_InAbstractItemModel>
+															<Version value="1"></Version>
+															<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="59" description=""></ItemType>
+														</CT_InAbstractItemModel>
+														<Version value="1"></Version>
+														<ModelName value="*" id="60" description=""></ModelName>
+														<ModelType value="CT_InZeroOrMoreGroupModel" id="61" description=""></ModelType>
+														<ChoiceMode value="0" id="62" description=""></ChoiceMode>
+														<FinderMode value="0" id="63" description=""></FinderMode>
+													</CT_InAbstractModel_Values>
+												</Children_0>
+												<Version value="1"></Version>
+												<ModelName value="ires" id="64" description=""></ModelName>
+												<ModelType value="CT_InResultModelGroupToCopy" id="65" description=""></ModelType>
+												<ChoiceMode value="0" id="66" description=""></ChoiceMode>
+												<FinderMode value="0" id="67" description=""></FinderMode>
+											</CT_InAbstractModel_Values>
+											<CT_InResultModelGroup_Values>
+												<Version value="1"></Version>
+												<GroupMiniNPSelect value="1" id="68" description=""></GroupMiniNPSelect>
+												<GroupMaxiNPSelect value="1" id="69" description=""></GroupMaxiNPSelect>
+												<IsRecursive value="false" id="70" description=""></IsRecursive>
+											</CT_InResultModelGroup_Values>
+											<CT_InResultModelGroupToCopy_Values>
+												<Version value="1"></Version>
+											</CT_InResultModelGroupToCopy_Values>
+										</ResultModel>
+										<Version value="1"></Version>
+									</Values>
+								</Turn>
+								<Version value="1"></Version>
+							</Values>
+						</InputResultConfigDialog>
+					</CT_VirtualAbstractStep>
+				</Settings>
+			</S1>
+			<S2>
+				<SerializedInformation>
+					<Version value="1"></Version>
+					<RelativeFileName value="" id="71" description=""></RelativeFileName>
+					<NSerialized value="0" id="72" description=""></NSerialized>
+				</SerializedInformation>
+			</S2>
+			<Step plugin="plug_onf" type="ONF_StepComputeDTM02" debug="off" id="35">
+				<S1>
+					<Settings>
+						<CT_VirtualAbstractStep>
+							<PostConfigDialog>
+								<Version>
+									<V value="1" id="73" description=""></V>
+								</Version>
+								<Widget>
+									<CT_DoubleSpinBox>
+										<Values>
+											<Version value="1"></Version>
+											<DoubleValue value="0.05" id="74" description="R&#233;solution de la grille :"></DoubleValue>
+										</Values>
+									</CT_DoubleSpinBox>
+									<CT_CheckBox>
+										<Values>
+											<Version value="1"></Version>
+											<Checked value="true" id="75" description="Interpolation"></Checked>
+											<Text value="" id="76" description=""></Text>
+										</Values>
+									</CT_CheckBox>
+									<CT_SpinBox>
+										<Values>
+											<Version value="1"></Version>
+											<IntValue value="5" id="77" description="Taille de la fen&#234;tre d&#39;interpolation"></IntValue>
+										</Values>
+									</CT_SpinBox>
+									<CT_CheckBox>
+										<Values>
+											<Version value="1"></Version>
+											<Checked value="true" id="78" description="Lissage &#40;filtre moyen&#41;"></Checked>
+											<Text value="" id="79" description=""></Text>
+										</Values>
+									</CT_CheckBox>
+									<CT_DoubleSpinBox>
+										<Values>
+											<Version value="1"></Version>
+											<DoubleValue value="2" id="80" description="Voisinage de lissage :"></DoubleValue>
+										</Values>
+									</CT_DoubleSpinBox>
+									<CT_CheckBox>
+										<Values>
+											<Version value="1"></Version>
+											<Checked value="true" id="81" description="Convertir valeurs NA en min&#40;MNT&#41; ?"></Checked>
+											<Text value="" id="82" description=""></Text>
+										</Values>
+									</CT_CheckBox>
+								</Widget>
+							</PostConfigDialog>
+							<InputResultConfigDialog>
+								<Values>
+									<Turn>
+										<Values>
+											<ResultModel>
+												<CT_InAbstractModel_Values>
+													<Possibility>
+														<IsSelected value="true" id="83" description=""></IsSelected>
+														<OutModelName value="a" id="84" description=""></OutModelName>
+														<OutModelType value="CT_OutResultModelGroupCopy" id="85" description=""></OutModelType>
+													</Possibility>
+													<Children_0>
+														<CT_InAbstractModel_Values>
+															<Children_0>
+																<CT_InAbstractModel_Values>
+																	<Possibility>
+																		<IsSelected value="true" id="86" description=""></IsSelected>
+																		<OutModelName value="LVOX3_SLF_group" id="87" description=""></OutModelName>
+																		<OutModelType value="CT_OutStdGroupModel" id="88" description=""></OutModelType>
+																	</Possibility>
+																	<Children_0>
+																		<CT_InAbstractModel_Values>
+																			<Possibility>
+																				<IsSelected value="false" id="89" description=""></IsSelected>
+																				<OutModelName value="sce" id="90" description=""></OutModelName>
+																				<OutModelType value="CT_OutStdSingularItemModel" id="91" description=""></OutModelType>
+																			</Possibility>
+																			<Possibility>
+																				<IsSelected value="false" id="92" description=""></IsSelected>
+																				<OutModelName value="i87" id="93" description=""></OutModelName>
+																				<OutModelType value="CT_OutStdSingularItemModel" id="94" description=""></OutModelType>
+																			</Possibility>
+																			<Possibility>
+																				<IsSelected value="true" id="95" description=""></IsSelected>
+																				<OutModelName value="i88" id="96" description=""></OutModelName>
+																				<OutModelType value="CT_OutStdSingularItemModel" id="97" description=""></OutModelType>
+																			</Possibility>
+																			<CT_InAbstractItemModel>
+																				<Version value="1"></Version>
+																				<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable&#47;CT_AbstractItemDrawableWithPointCloud&#47;CT_Scene" id="98" description=""></ItemType>
+																			</CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ModelName value="isc" id="99" description=""></ModelName>
+																			<ModelType value="CT_InStdSingularItemModel" id="100" description=""></ModelType>
+																			<ChoiceMode value="1" id="101" description=""></ChoiceMode>
+																			<FinderMode value="0" id="102" description=""></FinderMode>
+																		</CT_InAbstractModel_Values>
+																	</Children_0>
+																	<Children_1>
+																		<CT_InAbstractModel_Values>
+																			<CT_InAbstractItemModel>
+																				<Version value="1"></Version>
+																				<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable&#47;CT_AbstractItemDrawableWithoutPointCloud&#47;CT_AbstractShape2D&#47;CT_AbstractAreaShape2D" id="103" description=""></ItemType>
+																			</CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ModelName value="emprise" id="104" description=""></ModelName>
+																			<ModelType value="CT_InStdSingularItemModel" id="105" description=""></ModelType>
+																			<ChoiceMode value="1" id="106" description=""></ChoiceMode>
+																			<FinderMode value="1" id="107" description=""></FinderMode>
+																		</CT_InAbstractModel_Values>
+																	</Children_1>
+																	<CT_InAbstractItemModel>
+																		<Version value="1"></Version>
+																		<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="108" description=""></ItemType>
+																	</CT_InAbstractItemModel>
+																	<Version value="1"></Version>
+																	<ModelName value="igrp" id="109" description=""></ModelName>
+																	<ModelType value="CT_InStdGroupModel" id="110" description=""></ModelType>
+																	<ChoiceMode value="2" id="111" description=""></ChoiceMode>
+																	<FinderMode value="0" id="112" description=""></FinderMode>
+																</CT_InAbstractModel_Values>
+															</Children_0>
+															<CT_InAbstractItemModel>
+																<Version value="1"></Version>
+																<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="113" description=""></ItemType>
+															</CT_InAbstractItemModel>
+															<Version value="1"></Version>
+															<ModelName value="*" id="114" description=""></ModelName>
+															<ModelType value="CT_InZeroOrMoreGroupModel" id="115" description=""></ModelType>
+															<ChoiceMode value="0" id="116" description=""></ChoiceMode>
+															<FinderMode value="0" id="117" description=""></FinderMode>
+														</CT_InAbstractModel_Values>
+													</Children_0>
+													<Version value="1"></Version>
+													<ModelName value="ires" id="118" description=""></ModelName>
+													<ModelType value="CT_InResultModelGroupToCopy" id="119" description=""></ModelType>
+													<ChoiceMode value="0" id="120" description=""></ChoiceMode>
+													<FinderMode value="0" id="121" description=""></FinderMode>
+												</CT_InAbstractModel_Values>
+												<CT_InResultModelGroup_Values>
+													<Version value="1"></Version>
+													<GroupMiniNPSelect value="1" id="122" description=""></GroupMiniNPSelect>
+													<GroupMaxiNPSelect value="1" id="123" description=""></GroupMaxiNPSelect>
+													<IsRecursive value="false" id="124" description=""></IsRecursive>
+												</CT_InResultModelGroup_Values>
+												<CT_InResultModelGroupToCopy_Values>
+													<Version value="1"></Version>
+												</CT_InResultModelGroupToCopy_Values>
+											</ResultModel>
+											<Version value="1"></Version>
+										</Values>
+									</Turn>
+									<Version value="1"></Version>
+								</Values>
+							</InputResultConfigDialog>
+						</CT_VirtualAbstractStep>
+					</Settings>
+				</S1>
+				<S2>
+					<SerializedInformation>
+						<Version value="1"></Version>
+						<RelativeFileName value="" id="125" description=""></RelativeFileName>
+						<NSerialized value="0" id="126" description=""></NSerialized>
+					</SerializedInformation>
+				</S2>
+				<Step plugin="plug_base" type="PB_Grid2DExporter" debug="off" id="36">
+					<S1>
+						<Settings>
+							<CT_VirtualAbstractStep>
+								<PreConfigDialog>
+									<Version>
+										<V value="1" id="127" description=""></V>
+									</Version>
+									<Widget>
+										<CT_CheckBox>
+											<Values>
+												<Version value="1"></Version>
+												<Checked value="false" id="128" description="Nom adaptatif &#40;dans une boucle&#41;"></Checked>
+												<Text value="" id="129" description=""></Text>
+											</Values>
+										</CT_CheckBox>
+										<CT_CheckBox>
+											<Values>
+												<Version value="1"></Version>
+												<Checked value="false" id="130" description="Export Multiple"></Checked>
+												<Text value="" id="131" description=""></Text>
+											</Values>
+										</CT_CheckBox>
+										<CT_CheckBox>
+											<Values>
+												<Version value="1"></Version>
+												<Checked value="false" id="132" description="Nom de fichier dans un autre item &#40;si export multiple&#41;"></Checked>
+												<Text value="" id="133" description=""></Text>
+											</Values>
+										</CT_CheckBox>
+									</Widget>
+								</PreConfigDialog>
+								<InputResultConfigDialog>
+									<Values>
+										<Turn>
+											<Values>
+												<ResultModel>
+													<CT_InAbstractModel_Values>
+														<Possibility>
+															<IsSelected value="true" id="134" description=""></IsSelected>
+															<OutModelName value="b" id="135" description=""></OutModelName>
+															<OutModelType value="CT_OutResultModelGroupCopy" id="136" description=""></OutModelType>
+														</Possibility>
+														<Possibility>
+															<IsSelected value="false" id="137" description=""></IsSelected>
+															<OutModelName value="a" id="138" description=""></OutModelName>
+															<OutModelType value="CT_OutResultModelGroupCopy" id="139" description=""></OutModelType>
+														</Possibility>
+														<Possibility>
+															<IsSelected value="false" id="140" description=""></IsSelected>
+															<OutModelName value="rmnt" id="141" description=""></OutModelName>
+															<OutModelType value="CT_OutResultModelGroup" id="142" description=""></OutModelType>
+														</Possibility>
+														<Possibility>
+															<IsSelected value="false" id="143" description=""></IsSelected>
+															<OutModelName value="LVOX3_SLF_result" id="144" description=""></OutModelName>
+															<OutModelType value="CT_OutResultModelGroup" id="145" description=""></OutModelType>
+														</Possibility>
+														<Children_0>
+															<CT_InAbstractModel_Values>
+																<Children_0>
+																	<CT_InAbstractModel_Values>
+																		<Possibility>
+																			<IsSelected value="true" id="146" description=""></IsSelected>
+																			<OutModelName value="LVOX3_SLF_group" id="147" description=""></OutModelName>
+																			<OutModelType value="CT_OutStdGroupModel" id="148" description=""></OutModelType>
+																		</Possibility>
+																		<Children_0>
+																			<CT_InAbstractModel_Values>
+																				<Possibility>
+																					<IsSelected value="false" id="149" description=""></IsSelected>
+																					<OutModelName value="sce" id="150" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="151" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="152" description=""></IsSelected>
+																					<OutModelName value="int" id="153" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="154" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="155" description=""></IsSelected>
+																					<OutModelName value="sca" id="156" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="157" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="158" description=""></IsSelected>
+																					<OutModelName value="i0" id="159" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="160" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="161" description=""></IsSelected>
+																					<OutModelName value="LVOX3_SLF_scanner" id="162" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="163" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="164" description=""></IsSelected>
+																					<OutModelName value="i87" id="165" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="166" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="167" description=""></IsSelected>
+																					<OutModelName value="i88" id="168" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="169" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="true" id="170" description=""></IsSelected>
+																					<OutModelName value="i119" id="171" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="172" description=""></OutModelType>
+																				</Possibility>
+																				<CT_InAbstractItemModel>
+																					<Version value="1"></Version>
+																					<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable" id="173" description=""></ItemType>
+																				</CT_InAbstractItemModel>
+																				<Version value="1"></Version>
+																				<ModelName value="i" id="174" description=""></ModelName>
+																				<ModelType value="CT_InStdSingularItemModel" id="175" description=""></ModelType>
+																				<ChoiceMode value="1" id="176" description=""></ChoiceMode>
+																				<FinderMode value="0" id="177" description=""></FinderMode>
+																			</CT_InAbstractModel_Values>
+																		</Children_0>
+																		<CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="178" description=""></ItemType>
+																		</CT_InAbstractItemModel>
+																		<Version value="1"></Version>
+																		<ModelName value="g" id="179" description=""></ModelName>
+																		<ModelType value="CT_InStdGroupModel" id="180" description=""></ModelType>
+																		<ChoiceMode value="2" id="181" description=""></ChoiceMode>
+																		<FinderMode value="0" id="182" description=""></FinderMode>
+																	</CT_InAbstractModel_Values>
+																</Children_0>
+																<CT_InAbstractItemModel>
+																	<Version value="1"></Version>
+																	<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="183" description=""></ItemType>
+																</CT_InAbstractItemModel>
+																<Version value="1"></Version>
+																<ModelName value="*" id="184" description=""></ModelName>
+																<ModelType value="CT_InZeroOrMoreGroupModel" id="185" description=""></ModelType>
+																<ChoiceMode value="0" id="186" description=""></ChoiceMode>
+																<FinderMode value="0" id="187" description=""></FinderMode>
+															</CT_InAbstractModel_Values>
+														</Children_0>
+														<Children_1>
+															<CT_InAbstractModel_Values>
+																<Children_0>
+																	<CT_InAbstractModel_Values>
+																		<Possibility>
+																			<IsSelected value="false" id="188" description=""></IsSelected>
+																			<OutModelName value="LVOX3_SLF_group" id="189" description=""></OutModelName>
+																			<OutModelType value="CT_OutStdGroupModel" id="190" description=""></OutModelType>
+																		</Possibility>
+																		<Children_0>
+																			<CT_InAbstractModel_Values>
+																				<Possibility>
+																					<IsSelected value="false" id="191" description=""></IsSelected>
+																					<OutModelName value="sce" id="192" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="193" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="194" description=""></IsSelected>
+																					<OutModelName value="int" id="195" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="196" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="197" description=""></IsSelected>
+																					<OutModelName value="sca" id="198" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="199" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="200" description=""></IsSelected>
+																					<OutModelName value="i0" id="201" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="202" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="203" description=""></IsSelected>
+																					<OutModelName value="LVOX3_SLF_scanner" id="204" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="205" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="206" description=""></IsSelected>
+																					<OutModelName value="i87" id="207" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="208" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="209" description=""></IsSelected>
+																					<OutModelName value="i88" id="210" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="211" description=""></OutModelType>
+																				</Possibility>
+																				<CT_InAbstractItemModel>
+																					<Version value="1"></Version>
+																					<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable" id="212" description=""></ItemType>
+																				</CT_InAbstractItemModel>
+																				<Version value="1"></Version>
+																				<ModelName value="i" id="213" description=""></ModelName>
+																				<ModelType value="CT_InStdSingularItemModel" id="214" description=""></ModelType>
+																				<ChoiceMode value="1" id="215" description=""></ChoiceMode>
+																				<FinderMode value="0" id="216" description=""></FinderMode>
+																			</CT_InAbstractModel_Values>
+																		</Children_0>
+																		<CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="217" description=""></ItemType>
+																		</CT_InAbstractItemModel>
+																		<Version value="1"></Version>
+																		<ModelName value="g" id="218" description=""></ModelName>
+																		<ModelType value="CT_InStdGroupModel" id="219" description=""></ModelType>
+																		<ChoiceMode value="2" id="220" description=""></ChoiceMode>
+																		<FinderMode value="0" id="221" description=""></FinderMode>
+																	</CT_InAbstractModel_Values>
+																</Children_0>
+																<CT_InAbstractItemModel>
+																	<Version value="1"></Version>
+																	<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="222" description=""></ItemType>
+																</CT_InAbstractItemModel>
+																<Version value="1"></Version>
+																<ModelName value="*" id="223" description=""></ModelName>
+																<ModelType value="CT_InZeroOrMoreGroupModel" id="224" description=""></ModelType>
+																<ChoiceMode value="0" id="225" description=""></ChoiceMode>
+																<FinderMode value="0" id="226" description=""></FinderMode>
+															</CT_InAbstractModel_Values>
+														</Children_1>
+														<Children_2>
+															<CT_InAbstractModel_Values>
+																<Children_0>
+																	<CT_InAbstractModel_Values>
+																		<Possibility>
+																			<IsSelected value="false" id="227" description=""></IsSelected>
+																			<OutModelName value="gmnt" id="228" description=""></OutModelName>
+																			<OutModelType value="CT_OutStdGroupModel" id="229" description=""></OutModelType>
+																		</Possibility>
+																		<Children_0>
+																			<CT_InAbstractModel_Values>
+																				<Possibility>
+																					<IsSelected value="false" id="230" description=""></IsSelected>
+																					<OutModelName value="mnt" id="231" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="232" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="233" description=""></IsSelected>
+																					<OutModelName value="dens" id="234" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="235" description=""></OutModelType>
+																				</Possibility>
+																				<CT_InAbstractItemModel>
+																					<Version value="1"></Version>
+																					<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable" id="236" description=""></ItemType>
+																				</CT_InAbstractItemModel>
+																				<Version value="1"></Version>
+																				<ModelName value="i" id="237" description=""></ModelName>
+																				<ModelType value="CT_InStdSingularItemModel" id="238" description=""></ModelType>
+																				<ChoiceMode value="1" id="239" description=""></ChoiceMode>
+																				<FinderMode value="0" id="240" description=""></FinderMode>
+																			</CT_InAbstractModel_Values>
+																		</Children_0>
+																		<CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="241" description=""></ItemType>
+																		</CT_InAbstractItemModel>
+																		<Version value="1"></Version>
+																		<ModelName value="g" id="242" description=""></ModelName>
+																		<ModelType value="CT_InStdGroupModel" id="243" description=""></ModelType>
+																		<ChoiceMode value="2" id="244" description=""></ChoiceMode>
+																		<FinderMode value="0" id="245" description=""></FinderMode>
+																	</CT_InAbstractModel_Values>
+																</Children_0>
+																<CT_InAbstractItemModel>
+																	<Version value="1"></Version>
+																	<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="246" description=""></ItemType>
+																</CT_InAbstractItemModel>
+																<Version value="1"></Version>
+																<ModelName value="*" id="247" description=""></ModelName>
+																<ModelType value="CT_InZeroOrMoreGroupModel" id="248" description=""></ModelType>
+																<ChoiceMode value="0" id="249" description=""></ChoiceMode>
+																<FinderMode value="0" id="250" description=""></FinderMode>
+															</CT_InAbstractModel_Values>
+														</Children_2>
+														<Children_3>
+															<CT_InAbstractModel_Values>
+																<Children_0>
+																	<CT_InAbstractModel_Values>
+																		<Possibility>
+																			<IsSelected value="false" id="251" description=""></IsSelected>
+																			<OutModelName value="LVOX3_SLF_group" id="252" description=""></OutModelName>
+																			<OutModelType value="CT_OutStdGroupModel" id="253" description=""></OutModelType>
+																		</Possibility>
+																		<Children_0>
+																			<CT_InAbstractModel_Values>
+																				<Possibility>
+																					<IsSelected value="false" id="254" description=""></IsSelected>
+																					<OutModelName value="sce" id="255" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="256" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="257" description=""></IsSelected>
+																					<OutModelName value="int" id="258" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="259" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="260" description=""></IsSelected>
+																					<OutModelName value="sca" id="261" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="262" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="263" description=""></IsSelected>
+																					<OutModelName value="i0" id="264" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="265" description=""></OutModelType>
+																				</Possibility>
+																				<Possibility>
+																					<IsSelected value="false" id="266" description=""></IsSelected>
+																					<OutModelName value="LVOX3_SLF_scanner" id="267" description=""></OutModelName>
+																					<OutModelType value="CT_OutStdSingularItemModel" id="268" description=""></OutModelType>
+																				</Possibility>
+																				<CT_InAbstractItemModel>
+																					<Version value="1"></Version>
+																					<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractSingularItemDrawable" id="269" description=""></ItemType>
+																				</CT_InAbstractItemModel>
+																				<Version value="1"></Version>
+																				<ModelName value="i" id="270" description=""></ModelName>
+																				<ModelType value="CT_InStdSingularItemModel" id="271" description=""></ModelType>
+																				<ChoiceMode value="1" id="272" description=""></ChoiceMode>
+																				<FinderMode value="0" id="273" description=""></FinderMode>
+																			</CT_InAbstractModel_Values>
+																		</Children_0>
+																		<CT_InAbstractItemModel>
+																			<Version value="1"></Version>
+																			<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="274" description=""></ItemType>
+																		</CT_InAbstractItemModel>
+																		<Version value="1"></Version>
+																		<ModelName value="g" id="275" description=""></ModelName>
+																		<ModelType value="CT_InStdGroupModel" id="276" description=""></ModelType>
+																		<ChoiceMode value="2" id="277" description=""></ChoiceMode>
+																		<FinderMode value="0" id="278" description=""></FinderMode>
+																	</CT_InAbstractModel_Values>
+																</Children_0>
+																<CT_InAbstractItemModel>
+																	<Version value="1"></Version>
+																	<ItemType value="ItemDrawable&#47;CT_AbstractItemDrawable&#47;CT_AbstractItemGroup" id="279" description=""></ItemType>
+																</CT_InAbstractItemModel>
+																<Version value="1"></Version>
+																<ModelName value="*" id="280" description=""></ModelName>
+																<ModelType value="CT_InZeroOrMoreGroupModel" id="281" description=""></ModelType>
+																<ChoiceMode value="0" id="282" description=""></ChoiceMode>
+																<FinderMode value="0" id="283" description=""></FinderMode>
+															</CT_InAbstractModel_Values>
+														</Children_3>
+														<Version value="1"></Version>
+														<ModelName value="r" id="284" description=""></ModelName>
+														<ModelType value="CT_InResultModelGroup" id="285" description=""></ModelType>
+														<ChoiceMode value="0" id="286" description=""></ChoiceMode>
+														<FinderMode value="0" id="287" description=""></FinderMode>
+													</CT_InAbstractModel_Values>
+													<CT_InResultModelGroup_Values>
+														<Version value="1"></Version>
+														<GroupMiniNPSelect value="1" id="288" description=""></GroupMiniNPSelect>
+														<GroupMaxiNPSelect value="1" id="289" description=""></GroupMaxiNPSelect>
+														<IsRecursive value="true" id="290" description=""></IsRecursive>
+													</CT_InResultModelGroup_Values>
+												</ResultModel>
+												<Version value="1"></Version>
+											</Values>
+										</Turn>
+										<Version value="1"></Version>
+									</Values>
+								</InputResultConfigDialog>
+								<CustomName value="Grilles 2D, ACSII ESRI Grid" id="291" description=""></CustomName>
+							</CT_VirtualAbstractStep>
+							<PB_Grid2DExporter>
+								<ExporterConfiguration>
+									<ROOT>
+										<CT_AbstractExporter>
+											<Version value="1"></Version>
+											<FilePath value="." id="292" description=""></FilePath>
+										</CT_AbstractExporter>
+									</ROOT>
+								</ExporterConfiguration>
+								<Version value="1"></Version>
+								<ExportPath value="&#47;home&#47;nguyen&#47;work&#47;experimentation&#47;lvox&#47;TerreNeuve&#47;paperLvox&#47;bF17_PCT&#47;results&#47;5cm&#47;bF17_PCT-mnt" id="293" description=""></ExportPath>
+								<Adaptative value="false" id="294" description=""></Adaptative>
+								<MultipleExport value="false" id="295" description=""></MultipleExport>
+								<OtherItem value="false" id="296" description=""></OtherItem>
+							</PB_Grid2DExporter>
+						</Settings>
+					</S1>
+					<S2>
+						<SerializedInformation>
+							<Version value="1"></Version>
+							<RelativeFileName value="" id="297" description=""></RelativeFileName>
+							<NSerialized value="0" id="298" description=""></NSerialized>
+						</SerializedInformation>
+					</S2>
+				</Step>
+			</Step>
+		</Step>
+	</Step>
+</COMPUTREE_SCRIPT>
